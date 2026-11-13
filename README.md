@@ -160,6 +160,8 @@ Episode 1, segment 1.8 says the same thing in narration. Keep the three in agree
 
 ## Files
 
+- `AGENTS.md` – orientation for AI agents and new collaborators (`CLAUDE.md` loads it).
+- `STATUS.md` – what is done, what remains, decisions and the work log.
 - `episodes/` – the scripts.
 - `series-bible.md` – the series plan, recurring visuals, house style and per-episode briefs.
 - `snippets/epNN/` – one Python file per QR code, with its recorded output (`.out`).
