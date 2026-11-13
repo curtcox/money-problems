@@ -1,0 +1,8 @@
+USD: 1234.5 = 123,450 minor units
+JPY: 1234.5 = 1,234 minor units
+KWD: 1234.5 = 1,234,500 minor units
+BTC: 1234.5 = 123,450,000,000 minor units
+ETH: 1234.5 = 1,234,500,000,000,000,000,000 minor units
+Wrong exponent: 1000 JPY stored as cents shows as 10 JPY
+uint64 limit in wei: 18446744073709551615
+that is only 18.446744073709551615 ether

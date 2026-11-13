@@ -1,0 +1,4 @@
+float total  = 10000.000000171856
+cents total  = 1000000
+as money     = $10,000.00
+exactly $10,000.00? True

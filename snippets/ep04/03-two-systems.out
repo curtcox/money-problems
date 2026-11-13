@@ -1,0 +1,6 @@
+$0.30: float 0.01  decimal 0.02  <- break
+$0.70: float 0.03  decimal 0.04  <- break
+$1.00: float 0.05  decimal 0.05
+$2.30: float 0.11  decimal 0.12  <- break
+$2.50: float 0.12  decimal 0.13  <- break
+$4.10: float 0.20  decimal 0.21  <- break

@@ -1,0 +1,5 @@
+Decimal(0.1)   = 0.1000000000000000055511151231257827021181583404541015625
+Decimal("0.1") = 0.1
+equal? False
+three dimes, from floats: 0.3000000000000000166533453694
+three dimes, from text:   0.3

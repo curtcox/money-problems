@@ -1,0 +1,6 @@
+month 10: balance $166.70
+month 11: balance $83.37
+month 12: balance $-0.00
+statement says:    $-0.00
+balance == 0:      False
+what is stored:    -1.2789769243681803e-13

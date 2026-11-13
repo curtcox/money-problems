@@ -1,0 +1,4 @@
+float: 12 x 83.33 = 999.96
+each 8333 with 4 cents left over
+last month pays   [8333, 8333, 8333, 8333, 8333] ... [8333, 8337] sum 100000
+first months pay  [8334, 8334, 8334, 8334, 8333] ... [8333, 8333] sum 100000

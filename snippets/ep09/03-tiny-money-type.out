@@ -1,0 +1,5 @@
+USD 20.00
+JPY 1500 | KWD 1.250
+USD 1.65
+ValueError: 1.005 has too many decimals for USD
+ValueError: can't add JPY to USD

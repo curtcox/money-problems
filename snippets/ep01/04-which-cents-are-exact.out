@@ -1,0 +1,6 @@
+exact: [0, 25, 50, 75]
+4 of 100 cent values are stored exactly
+0.10 is stored above by 5.6e-18
+0.20 is stored above by 1.1e-17
+0.30 is stored below by 1.1e-17
+0.70 is stored below by 4.4e-17

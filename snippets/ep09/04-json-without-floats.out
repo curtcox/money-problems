@@ -1,0 +1,5 @@
+float price x 100   = 434.99999999999994
+Decimal price x 100 = 435.00
+{"price": "4.35", "currency": "USD"}
+{"price_minor": 435, "currency": "USD"}
+TypeError: Object of type Decimal is not JSON serializable

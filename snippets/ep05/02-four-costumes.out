@@ -1,0 +1,5 @@
+shortest repr (Python, JavaScript, Java): 0.30000000000000004
+6 decimals    (C printf %f):              0.300000
+15 digits     (spreadsheet display):      0.3
+17 digits     (C printf %.17g):           0.30000000000000004
+is it 0.3?                                False
