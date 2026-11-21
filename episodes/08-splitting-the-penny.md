@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 8.1 Cold open · ≈ 1:20
+### 8.1 Cold open · ≈ 0:50
 
 **Visual.** [V8.1a] Black canvas. A gold "$100.00" bill sits in the centre. Three
 plain figures (simple circles with name tags "A", "B", "C", no faces) stand below it.
@@ -59,7 +59,7 @@ in cents: 3333 each, and 1 cent left over
 >
 > That last cent has to go somewhere. Someone pays thirty-three thirty-four. And the question of who, and how you decide, turns out to be one of the most interesting little problems in handling money.
 
-### 8.2 The conservation law · ≈ 1:20
+### 8.2 The conservation law · ≈ 0:54
 
 **Visual.** [V8.2a] The ledger motif: a T-account titled "Dinner", a "$100.00" credit on
 one side. On the other side, three debits "$33.33" stack up; the balance scale above
@@ -77,7 +77,7 @@ card payments, a tax total into receipt lines.
 >
 > Notice that rounding each share separately can't promise this. Each share is rounded with no idea what happened to the others, so the little rounding errors are free to pile up in any direction. To keep the books balanced, the shares have to be decided together.
 
-### 8.3 Largest remainder · ≈ 2:00
+### 8.3 Largest remainder · ≈ 1:08
 
 **Visual.** [V8.3a] Code panel q08-02 showing `allocate`. [V8.3b] Three bars, one per
 person, each with the exact share drawn as a `YELLOW` outline: 3333 and one third cents.
@@ -122,7 +122,7 @@ $100.00 [1, 1, 1] -> ['$33.34', '$33.33', '$33.33'] sum $100.00
 >
 > And the result: thirty-three thirty-four, thirty-three thirty-three, thirty-three thirty-three. Sum: exactly one hundred dollars. It can't come out any other way, because we handed out precisely the cents that were left over, and no more.
 
-### 8.4 Weights and percentages · ≈ 1:20
+### 8.4 Weights and percentages · ≈ 1:00
 
 **Visual.** [V8.4a] The bars from 8.3 morph into bars of lengths 1 : 2 : 3, labelled
 "shares held". The total above reads "$1,000.00". [V8.4b] The second output line prints;
@@ -146,7 +146,7 @@ $10.00 [333, 333, 334] -> ['$3.33', '$3.33', '$3.34'] sum $10.00
 >
 > The weights never need to be money, and they never need to be floats. Shares, hours worked, square metres of office space, or the prices on a receipt. Anything you can count.
 
-### 8.5 Spreading a discount · ≈ 1:50
+### 8.5 Spreading a discount · ≈ 1:16
 
 **Visual.** [V8.5a] The receipt motif: three lines, "Book $19.99", "Mug $5.00", "Lamp
 $12.50", subtotal "$37.49". A gold coupon "−$5.00" slides onto the bottom. [V8.5b] Code
@@ -185,7 +185,7 @@ receipt total: 3249 = 3749 - 500
 >
 > And this pays off later. If the customer returns the mug, you refund what they actually paid for it: five dollars minus its sixty-seven cent share of the coupon, four thirty-three. Not five dollars, which would hand back money they never paid. The split you store today is the refund you owe tomorrow, so store it.
 
-### 8.6 Twelve payments · ≈ 1:30
+### 8.6 Twelve payments · ≈ 1:01
 
 **Visual.** [V8.6a] A calendar strip of twelve months. Above it, "$1,000.00 a year".
 [V8.6b] Code panel q08-04; the float line prints, twelve gold "83.33" tags fall onto the
@@ -220,7 +220,7 @@ first months pay  [8334, 8334, 8334, 8334, 8333] ... [8333, 8333] sum 100000
 >
 > Both add up to exactly a thousand dollars. Neither is wrong. Charging the extra early means you collect it sooner; charging it last means a customer who cancels early never pays it. Which one you choose is a business decision, and possibly a contractual one. What matters is that you make it on purpose, write it down, and apply it the same way every time.
 
-### 8.7 Who gets the extra cent? · ≈ 1:20
+### 8.7 Who gets the extra cent? · ≈ 0:53
 
 **Visual.** [V8.7a] Three figures from 8.1 return. Over twelve months, a calendar
 shows the leftover penny from each month's three-way split landing on figure A every
@@ -234,7 +234,7 @@ the scene: "deterministic", "documented", "fair over time".
 >
 > All of these are choices about who gets a penny. Which should make you a little suspicious. Can a reasonable rule for handing out pennies ever behave unreasonably? <break time="0.5s" /> It can.
 
-### 8.8 The Alabama paradox · ≈ 1:40
+### 8.8 The Alabama paradox · ≈ 1:22
 
 **Visual.** [V8.8a] Code panel q08-05 with `WEIGHTS = [1, 3, 3]`. Three bars of weights
 1, 3, 3. [V8.8b] The console prints line by line, and pennies drop onto the bars to match:
@@ -273,7 +273,7 @@ for total in range(1, 9):
 >
 > For money, the paradox is usually harmless. But it's a good reminder that every allocation method is a policy with consequences, and some of them are surprising.
 
-### 8.9 Recap and challenge · ≈ 1:20
+### 8.9 Recap and challenge · ≈ 1:07
 
 **Visual.** [V8.9a] A recap column builds: "Rounding each share can lose or invent a cent"
 → "Parts must add up to the whole, exactly" → "Floor every share, give leftovers to the

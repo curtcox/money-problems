@@ -36,6 +36,13 @@ Community. Curt Cox directs; Claude writes scripts and code samples.
 | `tools/check_snippets.py` | Runs snippets, checks scripts against them | Yes |
 | `tools/qr-links.mjs` | Generates links; `--upload` stages payloads, `--check` asks HashBin | Yes |
 | `tools/extract-narration.mjs` | Writes per-segment narration text and `cues.csv` | Yes |
+| `tools/narrate.py` | Generates ElevenLabs audio per segment (spends credits: director's go-ahead) | Yes |
+| `tools/make_qr_svgs.py` | QR images and `production/qr-matrices.json` (needs `segno`) | Yes |
+| `tools/descriptions.py` | Video descriptions to `build/youtube/` | Yes |
+| `production/common.py` | Shared Manim helpers: timing, QR cards, recurring visuals | Yes, carefully: every episode uses it |
+| `production/epNN.py` | One Manim Scene per script segment | Yes |
+| `production/render.py`, `check_qr.py`, `check_holds.py`, `credits.py` | Render and stitch, QR decode and hold-time checks, credits card | Yes |
+| `production/qr-matrices.json` | QR module grids | No – `tools/make_qr_svgs.py` |
 | `tools/vendor/` | lz-string 1.5.0 (MIT), vendored | No |
 | `build/` | Generated, git-ignored (`narration/`, `hashbin-upload/`) | No |
 
@@ -48,13 +55,20 @@ python3 tools/check_snippets.py                 # must report 0 problems before 
 python3 tools/check_snippets.py --record ep03   # after an intentional snippet change; then read the .out
 node tools/qr-links.mjs                         # after any snippet change; commit the regenerated files
 node tools/extract-narration.mjs                # word counts and minutes per episode
+python3 production/render.py 3 -ql              # quick review render of episode 3 (see production/README.md)
+python3 tools/descriptions.py                   # video descriptions, after rendering
 ```
+
+Production needs Manim Community 0.22 and ffmpeg but no TeX: never use `MathTex`/`Tex`.
 
 `node tools/qr-links.mjs --check` queries the HashBin service and is rate-limited; run it
 only when you need upload status, not as a routine check.
 
 ## Rules that are easy to break
 
+- **Scenes read snippets.** Production scenes draw on-screen code and output from the
+  snippet files, so a snippet change shows up in the video; re-render the episode and run
+  `python3 tools/make_qr_svgs.py` (the QR code changes too).
 - **Snippets and scripts move together.** Every ` ```python ` block in a script must be
   lines from one of that episode's snippets, and every ` ```output ` block lines from the
   recorded output. Every number the narration states comes from a snippet's `.out` or is

@@ -55,7 +55,8 @@ Each episode is a sequence of numbered segments (`### 3.4 Title · ≈ 1:30`). I
 - Each episode ends with **Fact check before recording**: claims that the snippets don't
   prove, with where to confirm them.
 
-Durations are estimates at 145 words per minute plus held visual beats.
+Durations are the measured lengths of the narrated segment renders (before narration they
+were estimates at 145 words per minute; the voice reads faster, about a fifth shorter).
 `node tools/extract-narration.mjs` reports the narrated word count per segment.
 
 ## Voice and narration
@@ -133,21 +134,34 @@ Workflow:
 
 ## Production pipeline
 
-1. **Narration.** `node tools/extract-narration.mjs` writes one text file per segment and a
-   `cues.csv` cue sheet to `build/narration/`. Generate each segment's audio with
-   ElevenLabs. (ManimOnline's `narrate.py` can be adapted to do this in one step.)
-2. **Graphics.** Build Manim Community scenes from the **Visual** notes, one Scene per
-   segment, timed to the measured narration. Where a shot reproduces a snippet, start
-   from the snippet's code and output so the screen matches what the QR code opens.
-3. **Publishing.** Each description ends with the episode's QR URLs (and fallbacks) and
-   the disclosure block below.
+Everything runs from the repository root. Details are in
+[production/README.md](production/README.md).
+
+1. **QR images.** After any snippet change, `node tools/qr-links.mjs`, then
+   `python3 tools/make_qr_svgs.py` (needs `segno`) to refresh `production/qr-matrices.json`,
+   which the scenes draw from. `python production/check_qr.py` decodes every rendered card.
+2. **Narration.** `python3 tools/narrate.py N --dry-run` shows exactly what will be sent;
+   without `--dry-run` it generates episode N's audio per segment with ElevenLabs (voice
+   "Curt Cox 2", key from the macOS keychain, pronunciation aliases applied) into
+   `build/narration/audio/epNN/`, with character timings, and writes the measured lengths to
+   `build/narration/durations.json`. This spends credits; the director starts it.
+   `node tools/extract-narration.mjs` still writes plain-text narration and `cues.csv`.
+3. **Graphics.** `production/epNN.py` holds one Manim Community Scene per segment, built
+   from the **Visual.** notes, with on-screen code and output read from the snippet files.
+   `python3 production/render.py N -ql` renders a quick review; `render.py N` renders
+   1080p60 and stitches `build/episodes/epNN-1080p60.mp4`, credits card included. Scenes
+   time themselves to the estimated narration, and to the real audio once step 2 has run;
+   the stitched file then carries the soundtrack.
+4. **Publishing.** `python3 tools/descriptions.py` writes each description (summary,
+   chapters from the rendered segments, QR URLs, fallback links or a pinned comment holding
+   them, and the disclosure block below) to `build/youtube/`.
 
 ## How this series was made
 
 ```text
 How this series was made
 Animation: Manim Community, from Python code in the series repository.
-Scripts and code samples: Claude Opus 5.5, an AI model by Anthropic.
+Scripts, code samples, animation code and production tooling: Claude Opus 5.5, an AI model by Anthropic.
 Direction: Curt Cox.
 Narration: ElevenLabs text-to-speech, from a model of Curt Cox's voice.
 Source: https://github.com/curtcox/money-problems
@@ -156,7 +170,8 @@ Text-to-speech reads names from code as ordinary English words, so the words you
 may be pronounced differently than programmers would say them.
 ```
 
-Episode 1, segment 1.8 says the same thing in narration. Keep the three in agreement.
+Episode 1, segment 1.8 says the same thing in narration, and the credits card at the end of
+every episode (`production/credits.py`) shows it. Keep all of them in agreement.
 
 ## Files
 
@@ -167,5 +182,7 @@ Episode 1, segment 1.8 says the same thing in narration. Keep the three in agree
 - `snippets/epNN/` – one Python file per QR code, with its recorded output (`.out`).
 - `qr-manifest.json`, `qr-links.json`, `qr-links.md` – generated ids, titles, CIDs and URLs.
 - `pronunciations.pls` – ElevenLabs pronunciation dictionary.
-- `tools/` – snippet checks, link generation and narration extraction.
+- `production/` – Manim Community scenes (one file per episode), shared visuals, render and QR checks.
+- `tools/` – snippet checks, link generation, QR images, narration extraction and generation,
+  video descriptions.
   `tools/vendor/` holds lz-string 1.5.0 (MIT) for the fallback links.

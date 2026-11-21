@@ -19,7 +19,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 2.1 Cold open · ≈ 1:00
+### 2.1 Cold open · ≈ 0:38
 
 **Visual.** [V2.1a] A simple house outline with a price tag: "$131,072.01". [V2.1b] The tag
 is fed into a narrow box labelled "32-bit float"; out the other side comes "$131,072.015625".
@@ -42,7 +42,7 @@ $ 1,000,000.01  stored as      1,000,000.0
 >
 > To understand why, we need to open up a floating-point number and look inside.
 
-### 2.2 Scientific notation, in binary · ≈ 2:00
+### 2.2 Scientific notation, in binary · ≈ 1:39
 
 **Visual.** [V2.2a] Decimal scientific notation first: "6.02 × 10²³" and "1.6 × 10⁻⁴",
 with the digits labelled "significand" (`BLUE`) and the power labelled "exponent" (`YELLOW`).
@@ -87,7 +87,7 @@ def show(x):
 >
 > Compare a quarter. It's exactly one times two to the minus two, so the fraction is fifty-two zeros. Nothing to round. Nothing lost.
 
-### 2.3 A sliding window · ≈ 1:40
+### 2.3 A sliding window · ≈ 0:57
 
 **Visual.** [V2.3a] The float line from episode 1, now from 1 to 2. Ticks are drawn as a
 dense `BLUE` comb; a label reads "2⁵² doubles". [V2.3b] The line extends from 2 to 4. The
@@ -105,7 +105,7 @@ whole-dollar bits enter from the left and push the cents bits out of the window 
 >
 > In decimal terms, that's about fifteen or sixteen significant digits. They're shared between the dollars and the cents. The more digits the dollars need, the fewer are left for everything after the point.
 
-### 2.4 The gap table · ≈ 1:40
+### 2.4 The gap table · ≈ 0:39
 
 **Visual.** [V2.4a] Code panel q02-02. The console prints the gap table one row at a time.
 Beside each row a ruler segment shows the gap, drawn on a log scale; a `GREEN` reference
@@ -136,7 +136,7 @@ $10,000,000,000,000,000   gap 2
 >
 > But keep going. At a quadrillion dollars, the gap between neighbouring doubles is an eighth of a dollar. There is no double for a quadrillion dollars and one cent. And at ten quadrillion, the gap is two whole dollars. The odd-numbered dollar amounts don't exist at all.
 
-### 2.5 When a balance loses its cents · ≈ 1:40
+### 2.5 When a balance loses its cents · ≈ 1:09
 
 **Visual.** [V2.5a] The last three lines of q02-02 print. Each becomes a float-line close-up
 around its power of two, with the ticks labelled by their gap and a `GOLD` "+1¢" arrow
@@ -164,7 +164,7 @@ the arrow lands past the halfway point and snaps up, to a tick a cent and a half
 >
 > You probably don't have seventy trillion dollars. But the window is the same wherever your numbers live. Count in a currency with very small units, or keep amounts in thousandths, or add up the transactions of a large bank for a year, and those sixteen digits get used up much sooner than you'd think. And as we're about to see, there's a much smaller float that runs out of room far, far earlier.
 
-### 2.6 Thirty-two bits · ≈ 1:40
+### 2.6 Thirty-two bits · ≈ 1:13
 
 **Visual.** [V2.6a] The 64-box strip shrinks to 32 boxes: 1 sign, 8 exponent, 23 fraction,
 plus the implicit 1 for "24 bits". [V2.6b] Code panel q02-03; the console prints the five
@@ -201,7 +201,7 @@ float64 gap at $131,072: 2.9103830456733704e-11
 >
 > You might think nobody would store money in a thirty-two-bit float. But they show up in surprising places: data pipelines built for graphics cards and machine learning, which favour them for speed, some database columns declared as real, binary file formats, game economies. Anywhere a number passes through one of those, the whole pipeline is only as precise as its narrowest pipe.
 
-### 2.7 Round to nearest, ties to even · ≈ 1:30
+### 2.7 Round to nearest, ties to even · ≈ 1:07
 
 **Visual.** [V2.7a] The float line with two ticks. Above it, an exact result is drawn as a
 `YELLOW` diamond between them; an arrow snaps it to the nearer tick. [V2.7b] A label lists
@@ -219,7 +219,7 @@ slivers, each at most half a gap, piles up into a visible bar: "each step is tin
 >
 > So each single operation is as good as it can possibly be: its error is at most half a gap. The trouble is that a program doesn't do one operation. It does millions. And each one can add its own half-gap.
 
-### 2.8 What print hides · ≈ 1:40
+### 2.8 What print hides · ≈ 1:01
 
 **Visual.** [V2.8a] Code panel q02-04, console beside it. `print(0.1)` prints `0.1`; then the
 20-place version prints with the tail `555` in `RED`. [V2.8b] The float line around 0.1 shows
@@ -259,7 +259,7 @@ on a statement  -> $-0.00
 >
 > And here's one that ends up on real statements. Ten cents plus twenty cents, minus thirty cents, should be nothing. It's actually a tiny positive sliver. Flip its sign, the way a balance owed in the other direction would, and round it to cents. You get zero, but a negative zero. Doubles keep a sign even on zero, and formatting faithfully prints it. Minus zero dollars and zero cents. Customers do notice that, and it's one of the friendlier ways these slivers show themselves.
 
-### 2.9 Recap and challenge · ≈ 1:20
+### 2.9 Recap and challenge · ≈ 1:08
 
 **Visual.** [V2.9a] A recap column builds: "64 bits = sign + exponent + 52 fraction bits (+1 implied)"
 → "same number of doubles between every power of two" → "gaps double as numbers double" →

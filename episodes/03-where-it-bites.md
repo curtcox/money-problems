@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 3.1 Cold open · ≈ 1:10
+### 3.1 Cold open · ≈ 0:53
 
 **Visual.** [V3.1a] A gold cent drops into a glass jar, then another, faster and faster,
 while a counter climbs. [V3.1b] Code panel q03-01; the console prints one line at each
@@ -56,7 +56,7 @@ for count in range(1, 1_000_001):
 >
 > In the last two episodes we saw what's inside a float. In this one, we go looking for trouble. Where, in real code, are these errors most likely to bite?
 
-### 3.2 Accumulation · ≈ 1:30
+### 3.2 Accumulation · ≈ 1:00
 
 **Visual.** [V3.2a] The float line returns. The running total is a `YELLOW` diamond hopping
 right by one cent at a time; each hop lands between ticks and snaps to the nearest one. A
@@ -73,7 +73,7 @@ interest", "report summed row by row". Caption: "situation 1: accumulation".
 >
 > Now, after a million additions we were off by less than a millionth of a dollar. Round to cents and it disappears. So on its own, accumulation is rarely the disaster. It's the seed. The disaster comes when that tiny error meets one of the next situations.
 
-### 3.3 Comparisons and thresholds · ≈ 1:50
+### 3.3 Comparisons and thresholds · ≈ 1:09
 
 **Visual.** [V3.3a] A shopping cart icon with three tags: "$16.99", "$18.00", "$15.01", and a
 banner: "Free shipping on orders of $50.00 or more". [V3.3b] Code panel q03-02; the console
@@ -111,7 +111,7 @@ Add $0.00 more for free shipping.
 >
 > And thresholds are exactly where money's rules live. Every equals equals, every greater-than-or-equal, every check against zero is a place where a sliver can flip the answer. Try the cart in a different order, by the way. Sometimes it comes out right, which makes this kind of bug very hard to reproduce.
 
-### 3.4 Dollars to cents, the wrong way · ≈ 1:50
+### 3.4 Dollars to cents, the wrong way · ≈ 1:05
 
 **Visual.** [V3.4a] A price tag "$0.29" enters a machine labelled "× 100", producing
 "28.999999999999996", then a second machine labelled "int" which chops everything after the
@@ -147,7 +147,7 @@ for price in [0.29, 0.57, 1.15, 4.35, 19.99]:
 >
 > Rounding instead of chopping fixes this particular conversion. Not one of the ten thousand amounts goes wrong with round. Keep that in mind, though: round fixes the conversion, not the float. Everything that happened to the number before you converted it is still there.
 
-### 3.5 Multiplying by rates · ≈ 1:30
+### 3.5 Multiplying by rates · ≈ 1:03
 
 **Visual.** [V3.5a] A receipt (the receipt motif) with a subtotal, then lines appearing for
 "tax 8.25%", "discount 15%", "interest 3.5% ÷ 365", "converted at 0.9187". Each product
@@ -171,7 +171,7 @@ tax = round(subtotal * order["tax_rate"], 2)
 >
 > Rates create these near-halfway answers all the time, and every one of them is a coin flip decided by representation error rather than by your rules. Episode six is all about rounding: the policies, the modes, and the trap of rounding a number that was already rounded once.
 
-### 3.6 Same numbers, different order · ≈ 1:50
+### 3.6 Same numbers, different order · ≈ 1:14
 
 **Visual.** [V3.6a] Code panel q03-04: the `add_up` function. A deck of a thousand cards, each
 a transaction amount, shuffles. [V3.6b] The console prints three totals from `add_up`: in
@@ -210,7 +210,7 @@ exact cents: 241354.0
 >
 > And order is something you often don't control. A database adding up a column may split the work between several workers and combine the pieces in whatever order they finish. A distributed job does the same across machines. So the same report, run twice on the same data, can produce totals that differ in the last digits. Usually, rounding to cents hides it. Occasionally, it doesn't, and then nobody can explain why yesterday's number changed.
 
-### 3.7 Crossing boundaries · ≈ 1:30
+### 3.7 Crossing boundaries · ≈ 0:54
 
 **Visual.** [V3.7a] A chain of system boxes: "web page (JavaScript)" → "JSON" → "API server" →
 "CSV export" → "spreadsheet" → "data frame". A gold amount "$19.99" travels along the arrows.
@@ -231,7 +231,7 @@ order = json.loads(text)
 >
 > So even if your own code is careful, the amount may have been a float for a while before it reached you, or may become one right after it leaves. A system is only as exact as the least exact place the money passes through.
 
-### 3.8 Very big, very small · ≈ 1:10
+### 3.8 Very big, very small · ≈ 0:39
 
 **Visual.** [V3.8a] A split screen. Left, "very big": a total counter racing upward toward the
 "gap > 1¢" marker from episode 2, and a 32-bit badge showing "gap > 1¢ at $131,072".
@@ -243,7 +243,7 @@ middle at a single multiplication sign: "tiny price × huge count".
 >
 > The opposite end matters too. Plenty of things are priced in fractions of a cent: cloud computing by the second, messages, data transfer, requests to a web service. A price of a few millionths of a dollar, times billions of uses, is a multiplication of a very small inexact number by a very large one, followed by a rounding to cents that someone will see on an invoice.
 
-### 3.9 Recap and challenge · ≈ 1:40
+### 3.9 Recap and challenge · ≈ 1:19
 
 **Visual.** [V3.9a] A risk map: horizontal axis "how often it happens", vertical axis "how
 visible the damage is". The seven situations appear as labelled dots: accumulation (often,

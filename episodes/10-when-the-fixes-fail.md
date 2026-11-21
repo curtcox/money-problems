@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 10.1 The fix that imported the bug · ≈ 1:30
+### 10.1 The fix that imported the bug · ≈ 1:13
 
 **Visual.** [V10.1a] The checklist card from episode 9 slides in, its first two items
 ticked in `GREEN`: "count in minor units", "Decimal for rates". [V10.1b] Code panel
@@ -71,7 +71,7 @@ System.out.println(BigDecimal.valueOf(0.1));
 >
 > Java has exactly the same trap. New BigDecimal of the double zero point one gives the same fifty-five digits. Pass a string, or use value of, and you get one tenth. The rule is the same everywhere: a decimal is only as exact as the digits you hand it.
 
-### 10.2 Decimals still round · ≈ 1:40
+### 10.2 Decimals still round · ≈ 1:16
 
 **Visual.** [V10.2a] Code panel q10-02. The console prints `precision: 28 digits`. [V10.2b]
 "1/3" appears in `YELLOW`, and the episode 1 pie chart of one third returns, now filled
@@ -109,7 +109,7 @@ with 6 digits: 12345.67 + 0.01 = 12345.7
 >
 > Nobody sets the precision to six on purpose, of course. But somebody might set it in one place and forget it applies to the whole thread. So when you divide, or multiply by a rate, decide how many places you keep, and round there, on purpose, with quantize.
 
-### 10.3 When types meet · ≈ 1:10
+### 10.3 When types meet · ≈ 0:44
 
 **Visual.** [V10.3a] Two tokens slide toward each other: a `GREEN` "Decimal 1.10" and a
 `BLUE` "float 1.10". A `RED` barrier drops between them as the console prints the
@@ -136,7 +136,7 @@ Decimal + float: unsupported operand type(s) for +: 'decimal.Decimal' and 'float
 >
 > Many languages and libraries are more forgiving, and forgiving is exactly what you don't want. If mixing the two quietly produces a float, then one stray float anywhere in a calculation turns the whole result back into the thing you were trying to avoid. When you choose a money library, check what it does here.
 
-### 10.4 Integer cents, broken two ways · ≈ 1:50
+### 10.4 Integer cents, broken two ways · ≈ 1:22
 
 **Visual.** [V10.4a] A price tag "$12.34" and a box labelled "store cents" outputs
 "1234". [V10.4b] The *wrong-unit* bug: the tag "1234" enters a second box labelled "show
@@ -175,7 +175,7 @@ next two whole numbers as floats: 9007199254740992.0 9007199254740992.0
 >
 > Sixty-four-bit integers push that limit to about ninety-two quadrillion dollars, which is plenty. But every ordinary JavaScript number is a double, and as we saw in episode five, whole numbers stop being exact at two to the fifty-third. In cents, that's about ninety trillion dollars. Past it, the next two whole numbers land on the same tick.
 
-### 10.5 Minor units that don't fit · ≈ 1:40
+### 10.5 Minor units that don't fit · ≈ 1:16
 
 **Visual.** [V10.5a] A table builds row by row from q10-04's output: currency code, digits
 after the point, and "1234.5 in minor units". USD, JPY, KWD rows in `GOLD`; BTC and ETH rows
@@ -219,7 +219,7 @@ that is only 18.446744073709551615 ether
 >
 > So an amount should always travel with its currency, and the number of digits should come from the currency, never from an assumption baked into the code.
 
-### 10.6 There and back again · ≈ 1:40
+### 10.6 There and back again · ≈ 0:58
 
 **Visual.** [V10.6a] Two gold coins, "$" and "€", with arrows between them labelled with the
 rate and its inverse from q10-05. [V10.6b] The product `rate * inverse: 0.99997857` appears;
@@ -257,7 +257,7 @@ $5000.00 -> €4285.50 -> $4999.89   change: -0.11
 >
 > None of this is a bug. Each step was exact and rounded on purpose. It's simply a reminder that rounding throws information away, and you can't get it back. That's why the euro changeover rules from episode six forbade inverse rates, and why systems that convert currencies should store the original amount, the rate, and the result, not just the result.
 
-### 10.7 Floats sneaking back in · ≈ 1:20
+### 10.7 Floats sneaking back in · ≈ 0:57
 
 **Visual.** [V10.7a] A clean pipeline diagram: "CSV file" → "data frame" → "service" →
 "JSON" → "browser" → "spreadsheet export" → "database". Every box starts `GREEN`.
@@ -274,7 +274,7 @@ failures are good failures".
 >
 > Every one of those is a boundary from episode three, and every one needs a guard: read amounts as strings or as integer minor units, convert them to your money type once, at the edge, and reject anything that arrives as a float. In Python, mixing a stray float with a Decimal fails loudly, which is the outcome you want. Make your boundaries just as unforgiving.
 
-### 10.8 When floats are fine · ≈ 1:30
+### 10.8 When floats are fine · ≈ 1:07
 
 **Visual.** [V10.8a] The screen splits in two. Left, under the heading "measuring" in
 `BLUE`: a smooth curve of a forecast with a shaded uncertainty band, a scatter of
@@ -295,7 +295,7 @@ itself across the middle.
 >
 > Or, in one line: <break time="0.6s" /> floats are for measuring; money is counted.
 
-### 10.9 The whole series, in one breath · ≈ 1:40
+### 10.9 The whole series, in one breath · ≈ 1:08
 
 **Visual.** [V10.9a] The series' recurring motifs return, one per episode, each with its
 episode number and a one-line caption, arranged in a ring around an empty centre: the cent grid with
@@ -311,7 +311,7 @@ the cracked decimal under "1/3", slides into the centre, and the ring tightens a
 >
 > Episode five showed that nearly every mainstream language stores the same answers, though they print them differently, because they share the same standard and the same hardware. Episode six made rounding a decision instead of an accident. Episode seven took Office Space seriously, and found that the fractions were real, the scheme needed truncation, and double-entry bookkeeping would have caught it. Episode eight kept splits adding up to the whole, paradoxes and all. Episode nine wrote the checklist. And today, we watched each fix fail in its own way, and learned what to watch for.
 
-### 10.10 Recap, challenge and farewell · ≈ 1:20
+### 10.10 Recap, challenge and farewell · ≈ 0:54
 
 **Visual.** [V10.10a] A short recap column builds: "Decimal from strings, not floats" →
 "Decimals still round: choose where" → "Integers overflow, and units get mixed up" →

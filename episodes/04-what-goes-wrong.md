@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 4.1 Cold open · ≈ 1:20
+### 4.1 Cold open · ≈ 0:52
 
 **Visual.** [V4.1a] The receipt motif, restyled as a loan statement: "Loan amount
 $1,000.00", then twelve payment lines scrolling past, eleven of $83.33 and one of $83.37.
@@ -61,7 +61,7 @@ what is stored:    -1.2789769243681803e-13
 >
 > In the last episode, we found where these errors appear. In this one, we follow them downstream, and see what they break.
 
-### 4.2 Ghost balances · ≈ 1:30
+### 4.2 Ghost balances · ≈ 0:43
 
 **Visual.** [V4.2a] A row of account cards, each with a balance. Most show `$0.00` in
 `GREEN`. Three show `$-0.00` or `$0.00` with a faint `RED` halo. [V4.2b] A process
@@ -79,7 +79,7 @@ float line, a few ticks away from zero.
 >
 > None of this loses anyone any money. But every one of these cases ends up in front of a person, who has to work out what happened, and then explain it to a customer who's convinced the bank can't count.
 
-### 4.3 The loop that skips zero · ≈ 1:30
+### 4.3 The loop that skips zero · ≈ 1:04
 
 **Visual.** [V4.3a] Code panel q04-02. A vertical number line from 1 down to −0.3, with a
 gold marker at 1.00. [V4.3b] Each step, the marker drops by a dime and the console prints
@@ -117,7 +117,7 @@ step 11: owed = -0.09999999999999987
 >
 > In real systems, this pattern hides inside retry loops, payment schedules, and code that "settles up" until the difference is gone. The fix is simple: never ask a float whether it is exactly zero. But it's even better not to use floats for the balance in the first place.
 
-### 4.4 Two systems, one cent apart · ≈ 1:50
+### 4.4 Two systems, one cent apart · ≈ 1:09
 
 **Visual.** [V4.4a] The ledger motif, split into two systems side by side: "System A
 (floats)" in `BLUE`, "System B (decimals)" in `GREEN`. Both receive the same price list,
@@ -156,7 +156,7 @@ $4.10: float 0.20  decimal 0.21  <- break
 >
 > Each difference is a single cent. But every one is a reconciliation break, and a break isn't settled by arithmetic. It's settled by a person, who opens a ticket, pulls the records from both systems, finds out why they differ, and decides which one is right. Multiply that by thousands of transactions a day, and the cost of a cent is suddenly measured in salaries.
 
-### 4.5 Totals that don't foot · ≈ 1:20
+### 4.5 Totals that don't foot · ≈ 0:56
 
 **Visual.** [V4.5a] The receipt motif: five line items, each with a price and its own
 rounded tax. Below, "Subtotal", "Tax", "Total". [V4.5b] A `YELLOW` adding-machine tape runs
@@ -174,7 +174,7 @@ foot". Then a text card: "Episode 6: where to round is a policy."
 >
 > Part of this problem is about when and where to round, and we'll give that its own episode. But floats make it worse, because they hand you values that are already slightly off before you've rounded anything at all.
 
-### 4.6 Truncation's one-way street · ≈ 1:40
+### 4.6 Truncation's one-way street · ≈ 1:13
 
 **Visual.** [V4.6a] A gold cent sliced into hundredths of a cent; a row of 100,000 tiny
 account icons, each producing a sliver of interest. [V4.6b] Two funnels: "truncate (round
@@ -214,7 +214,7 @@ after rounding:    68451.82  off by -0.46
 >
 > That's the difference between noise and bias. Noise annoys auditors. Bias moves money, from one party to another, systematically, and that's the kind of error that ends up in court. Hold on to this one, because in episode seven, a famous movie plot is built entirely on it.
 
-### 4.7 The report you can't reproduce · ≈ 1:30
+### 4.7 The report you can't reproduce · ≈ 0:57
 
 **Visual.** [V4.7a] Three identical stacks of 1,000 transaction cards, ordered three
 ways: by time, largest first, smallest first. [V4.7b] Each stack feeds into an adding
@@ -240,7 +240,7 @@ smallest first:  263006.58999999985
 >
 > Here the difference is tiny, and rounding to cents hides it. But not always: whenever a total sits right next to a half cent, the order of addition decides which way it rounds. And when a regulator asks you to reproduce last quarter's numbers exactly, "it depends on the order the threads finished" is not the answer they're hoping for.
 
-### 4.8 A stock index that sank · ≈ 1:20
+### 4.8 A stock index that sank · ≈ 0:58
 
 **Visual.** [V4.8a] A simple line chart, starting in January 1982 at 1000. It slides
 steadily downward month after month, with no drama in the market itself, reaching
@@ -258,7 +258,7 @@ above: "≈ 1098.892". A vertical `GREEN` arrow jumps from the old line to the n
 >
 > That's truncation's one-way street again, at a stock exchange. No floating point required: just a value that couldn't be kept exactly, and a cut that always went the same way.
 
-### 4.9 One tenth of a second · ≈ 1:00
+### 4.9 One tenth of a second · ≈ 0:52
 
 **Visual.** [V4.9a] Restrained and quiet: no music sting, plain `GREY` and white. A
 binary register of 24 boxes, holding the start of 1/10 in binary,
@@ -274,7 +274,7 @@ three seconds in silence.
 >
 > The cause was the same fact we started this series with: one tenth can't be stored exactly in binary.
 
-### 4.10 Recap and challenge · ≈ 1:20
+### 4.10 Recap and challenge · ≈ 1:03
 
 **Visual.** [V4.10a] A recap column builds: "ghost balances" → "loops that skip zero" →
 "reconciliation breaks" → "totals that don't foot" → "bias from truncation" → "reports you

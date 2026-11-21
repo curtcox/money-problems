@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 9.1 Cold open · ≈ 1:10
+### 9.1 Cold open · ≈ 0:45
 
 **Visual.** [V9.1a] Black canvas. The jar of pennies from the trailer returns, and the
 counter runs to "1,000,000 cents" again. [V9.1b] Code panel q09-01 on the left. Two
@@ -55,7 +55,7 @@ exactly $10,000.00? True
 >
 > We've spent eight episodes on what goes wrong. This one is about doing it right. Seven rules, a tiny money type that enforces them, and a checklist you can take to your next code review.
 
-### 9.2 Rule 1: count, don't measure · ≈ 1:40
+### 9.2 Rule 1: count, don't measure · ≈ 0:54
 
 **Visual.** [V9.2a] The checklist card appears with seven empty boxes; the first box's
 text writes itself: "1. Count, don't measure: whole minor units". [V9.2b] A price tag
@@ -81,7 +81,7 @@ print(f"as money     = ${dollars:,}.{cents:02d}")
 >
 > One warning. Getting into cents has to be done carefully too. Back in episode three, int of one point one five times one hundred gave us one hundred and fourteen. If an amount arrives as text, convert the text, not a float made from it. Which brings us to rule two.
 
-### 9.3 Rule 2: decimals from strings · ≈ 1:40
+### 9.3 Rule 2: decimals from strings · ≈ 1:04
 
 **Visual.** [V9.3a] Checklist box 2 writes itself: "2. Decimal for rates, built from
 strings". [V9.3b] Code panel q09-02. The first output line prints `0.3` in `GREEN`; the
@@ -117,7 +117,7 @@ from 1.005      = 1.00
 >
 > A decimal type only protects you if no float gets there first. Build decimals from strings, from integers, or from other decimals. Never from floats.
 
-### 9.4 Rule 3: round once, on purpose · ≈ 1:30
+### 9.4 Rule 3: round once, on purpose · ≈ 1:00
 
 **Visual.** [V9.4a] Checklist box 3: "3. Round once, at a defined point, with a named
 mode". [V9.4b] The q09-02 tax lines: `2.50 x 0.05 = 0.1250` prints, with the trailing
@@ -150,7 +150,7 @@ half even       = 0.12
 >
 > Two habits make this reliable. First, always pass the rounding mode explicitly, even when the default happens to be what you want, so the next person can see the decision. Second, decide where rounding happens: per line or per invoice, per day or per month. Then round there, once. Rounding at every step of a calculation lets small errors pile up, and makes the result depend on how the code happened to be organised.
 
-### 9.5 Rule 4: carry the currency · ≈ 1:20
+### 9.5 Rule 4: carry the currency · ≈ 0:57
 
 **Visual.** [V9.5a] Checklist box 4: "4. Carry the currency; minor units differ". [V9.5b]
 Three price tags side by side, each with a ruler underneath showing its minor-unit
@@ -167,7 +167,7 @@ other with a `RED` spark; a label: "not the same 5".
 >
 > And of course, five dollars plus five yen isn't ten of anything. Code that adds amounts in different currencies has made a mistake, and the best time to find out is the moment it happens.
 
-### 9.6 A tiny Money type · ≈ 2:10
+### 9.6 A tiny Money type · ≈ 1:25
 
 **Visual.** [V9.6a] Code panel q09-03, scrolled to the class. Four `YELLOW` brackets label
 the parts as the narration reaches them: "minor: int" (rule 1), "Decimal(text)" (rule 2),
@@ -216,7 +216,7 @@ ValueError: can't add JPY to USD
 >
 > It's not a complete library. Real ones add allocation, formatting for different locales, and much more. But it shows the shape of the idea: make the right thing easy, and the wrong thing an error.
 
-### 9.7 Rule 5: guard the boundaries · ≈ 1:50
+### 9.7 Rule 5: guard the boundaries · ≈ 1:20
 
 **Visual.** [V9.7a] Checklist box 5: "5. Guard the boundaries". A box labelled "your
 code" sits in the centre, `GREEN` inside. Around it, doors labelled "JSON", "database",
@@ -256,7 +256,7 @@ TypeError: Object of type Decimal is not JSON serializable
 >
 > The same idea applies at every other door. In a database, store money in a decimal or numeric column with a fixed number of places, or in an integer column of minor units, never in a float or real column. In a JavaScript front end, every ordinary number is a double, so keep amounts as integers of minor units or use a decimal library, and format for display only at the very end. And when a spreadsheet or a CSV file comes in, read the amounts as text and convert them yourself, rather than letting a tool guess that they're floats.
 
-### 9.8 Rules 6 and 7: allocate, and test · ≈ 1:50
+### 9.8 Rules 6 and 7: allocate, and test · ≈ 1:14
 
 **Visual.** [V9.8a] Checklist box 6: "6. Allocate, don't divide". The three-way split from
 episode 8 replays in miniature: $100.00 → $33.34, $33.33, $33.33, with "sum $100.00" in
@@ -291,7 +291,7 @@ allocate     failed 0 of 10000
 >
 > Random inputs find the awkward amounts you'd never think to type: the ones that land near half a cent, or don't divide evenly. And if a test finds a failure, keep that amount as a permanent test, so the bug can never quietly return.
 
-### 9.9 Recap and challenge · ≈ 1:20
+### 9.9 Recap and challenge · ≈ 1:01
 
 **Visual.** [V9.9a] The checklist card fills the screen, all seven boxes ticked in
 `GREEN`, and holds for at least 8 seconds:

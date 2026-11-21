@@ -23,7 +23,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 7.1 Cold open · ≈ 1:10
+### 7.1 Cold open · ≈ 1:03
 
 **Visual.** [V7.1a] Black canvas. Title card in plain type: "Office Space (1999)".
 No imagery from the film. [V7.1b] Three simple grey desk icons in a row, each with a
@@ -41,7 +41,7 @@ the wrong place on a price tag.
 >
 > It's a great film, and it doesn't owe anyone a code review. But it's a story about rounding, money and a bug, which makes it the perfect case study for this series. So let's give it one anyway. What did Office Space get right, and what did it get wrong?
 
-### 7.2 Where fractions of a penny come from · ≈ 1:40
+### 7.2 Where fractions of a penny come from · ≈ 1:01
 
 **Visual.** [V7.2a] A bank passbook page with a balance of "$1,234.56" and a label "3.5 %
 a year". [V7.2b] The balance is multiplied by 0.035 and divided by 365 on screen; the
@@ -80,7 +80,7 @@ $   10.01: interest 0.00095986  pay 0.00  left 0.0960¢
 >
 > So the film's premise is sound. Percentages, interest, currency conversion, fees, taxes: real financial arithmetic produces fractions of a cent all the time. As episode six showed, someone has to decide what happens to them.
 
-### 7.3 The scheme as code · ≈ 1:30
+### 7.3 The scheme as code · ≈ 0:41
 
 **Visual.** [V7.3a] Code panel q07-02, highlighting the loop. [V7.3b] A conveyor belt of
 account cards, each with a balance; at a cutting station labelled "truncate", each card's
@@ -117,7 +117,7 @@ average slice:   0.501 cents
 >
 > That makes sense. If the leftover fractions are spread evenly between nothing and a whole cent, their average is half a cent. Every account contributes about half a cent, every single day.
 
-### 7.4 Right: tiny times enormous · ≈ 1:20
+### 7.4 Right: tiny times enormous · ≈ 0:51
 
 **Visual.** [V7.4a] A single gold sliver labelled "½¢". [V7.4b] It multiplies into a
 grid that zooms out: 100,000 slivers become "$500 a day"; ten million become "about $50,000
@@ -133,7 +133,7 @@ returns; a label reads "the film: over $300,000 in a few days". A quick estimate
 >
 > So the arithmetic of the scheme holds up. Where it gets shakier is the assumption underneath it: that there's always a slice to take.
 
-### 7.5 Wrong: round to nearest, and the slices cancel · ≈ 1:40
+### 7.5 Wrong: round to nearest, and the slices cancel · ≈ 1:07
 
 **Visual.** [V7.5a] The cent ruler again. Under truncation, every amount's arrow points
 left, down to the cent below; the slivers all fall into the jar. [V7.5b] Switch to "half-up":
@@ -168,7 +168,7 @@ half-up   bank keeps  125.18  bank gives  124.59  net    0.59
 >
 > So under round to nearest, there's no pile of free fractions waiting to be collected. A virus that collects only the positive slices isn't taking money that would otherwise vanish. It's taking money the books expect to balance against the negative ones. Which brings us to the second problem.
 
-### 7.6 Wrong: fractions don't vanish · ≈ 1:40
+### 7.6 Wrong: fractions don't vanish · ≈ 1:22
 
 **Visual.** [V7.6a] The ledger motif: a T-account with three rows, "interest expense",
 "customers", "acct 1999". The balance scale sits above. [V7.6b] For one account, the full
@@ -198,7 +198,7 @@ books balance: True
 >
 > That's reconciliation: two independent calculations of the same thing, compared. It's dull, it runs every day, and it is exactly the kind of mundane detail that catches schemes like this.
 
-### 7.7 Right: the decimal point mistake · ≈ 1:30
+### 7.7 Right: the decimal point mistake · ≈ 0:58
 
 **Visual.** [V7.7a] Code panel q07-04, top half. The `skim` function, with two calls below
 it: `skim(Decimal("0.01"))` labelled "meant" and `skim(Decimal("1"))` labelled "oops".
@@ -231,7 +231,7 @@ meant: 50.01  oops: 4823.71  (96 times as much)
 >
 > And this is the most realistic part of the whole movie. Mixing up units, especially dollars and cents, is one of the most common money bugs there is. One system stores prices as whole cents, another reads them as dollars, and everything is suddenly a hundred times too big or too small. As we'll see in episode ten, it's the classic way that the standard fix, storing whole cents, goes wrong.
 
-### 7.8 Where floats come in · ≈ 1:30
+### 7.8 Where floats come in · ≈ 1:09
 
 **Visual.** [V7.8a] Code panel q07-04, bottom loop. A price tag "$4.35" goes into a box
 "× 100"; out comes a `BLUE` "434.99999999999994". [V7.8b] The cent ruler zoomed between 434
@@ -262,7 +262,7 @@ $0.29 is 28.999999999999996 cents; float slice 0.999999999999996¢
 >
 > That's not in the film; it's our addition. But it's the same int of x times one hundred mistake from episode three, and it has a sobering consequence. A program like this doesn't even need bad intentions. Any system that converts float dollars to cents by truncating is quietly moving whole cents, in one direction, on a few percent of its amounts.
 
-### 7.9 Real salami slicing · ≈ 1:00
+### 7.9 Real salami slicing · ≈ 0:41
 
 **Visual.** [V7.9a] A salami on a cutting board, sliced into paper-thin rounds, each
 labelled "¢". [V7.9b] A stack of index cards labelled "penny-shaving stories", most of them
@@ -273,7 +273,7 @@ stamped "source?" in `GREY`. [V7.9c] A checklist builds: "rounding rule written 
 >
 > What actually stops it is unglamorous: a written rounding rule, so there's no free remainder to take; double entry, so the remainder lands somewhere visible; daily reconciliation, so a second calculation checks the first; and change control, so no single programmer can quietly edit the code that moves money.
 
-### 7.10 Recap and challenge · ≈ 1:20
+### 7.10 Recap and challenge · ≈ 1:02
 
 **Visual.** [V7.10a] Two columns build. "Right": "fractions of a cent are real", "tiny × huge
 volume = real money", "a decimal point mistake is very believable". "Wrong": "round to

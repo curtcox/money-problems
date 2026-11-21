@@ -19,7 +19,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 6.1 Cold open · ≈ 1:10
+### 6.1 Cold open · ≈ 0:46
 
 **Visual.** [V6.1a] Black canvas. A price tag reading "$2.675" swings in. A `YELLOW`
 arrow points at the final 5. [V6.1b] The q06-01 panel types out on the left; the console
@@ -52,7 +52,7 @@ round(0.375, 2) = 0.38
 >
 > It can. Every one of these answers follows a precise rule. But there are two different rules tangled together here, and by the end of this video you'll be able to pull them apart. Along the way, we'll find that rounding isn't really arithmetic at all. It's a decision: someone has to choose how to round, and where. And sometimes that someone is a government.
 
-### 6.2 Eight ways to round · ≈ 2:00
+### 6.2 Eight ways to round · ≈ 1:30
 
 **Visual.** [V6.2a] A number line from 2.33 to 2.37 with cent ticks at 2.34, 2.35, 2.36.
 Five `YELLOW` diamonds sit at 2.341, 2.345, 2.355, 2.301 (shown on an inset line near
@@ -104,7 +104,7 @@ ROUND_05UP          2.34    2.34    2.36    2.31   -2.34
 >
 > Eight rules, all reasonable, and they disagree in every column. None of them is "the correct one". Each is a choice.
 
-### 6.3 Why round half to even · ≈ 1:40
+### 6.3 Why round half to even · ≈ 1:12
 
 **Visual.** [V6.3a] A strip of 10,000 tiny cells, one per amount from $0.000 to
 $9.999, packed into a long band. Every tenth cell, the exact half-cent ties, is
@@ -143,7 +143,7 @@ half-even total error +0.000 (all from ties: +0.000)
 >
 > That's why it's the default for floating-point arithmetic, which you met in episode one when zero point one plus zero point two landed on a tie. It's also what Python's built-in round function does. It is often called banker's rounding, although whether bankers ever widely used it is a matter of debate. In practice, plenty of financial rules say half up. Which brings us back to the question of who gets to choose.
 
-### 6.4 Two layers of rounding · ≈ 1:40
+### 6.4 Two layers of rounding · ≈ 1:18
 
 **Visual.** [V6.4a] The float line motif, zoomed near 2.675. The `YELLOW` diamond for
 the true 2.675 sits exactly at the midpoint between the cent ticks 2.67 and 2.68 (drawn
@@ -180,7 +180,7 @@ Decimal('2.675') half-up = 2.68
 >
 > The fix is to never let the float layer happen. Start from the digits you meant, as a string, in a decimal type. Decimal of the string two point six seven five, rounded half up to the cent, is two sixty-eight. Now there's only one layer of rounding, and it's the one you chose.
 
-### 6.5 Per line or per invoice · ≈ 1:50
+### 6.5 Per line or per invoice · ≈ 1:01
 
 **Visual.** [V6.5a] The receipt motif: three lines, "Item 1 0.99", "Item 2 0.99",
 "Item 3 0.99", subtotal 2.97, tax rate 8.25 %. [V6.5b] Left copy of the receipt: each line
@@ -219,7 +219,7 @@ rounded on total:   0.25
 >
 > But here's the trap. If your checkout page rounds per line and your invoicing system rounds the total, they'll disagree by a cent on some orders, and nobody will know which one is wrong, because neither is. So the rule has to be chosen once, written down, and used everywhere.
 
-### 6.6 When there's no penny · ≈ 1:20
+### 6.6 When there's no penny · ≈ 0:40
 
 **Visual.** [V6.6a] A cash register display reading "$1.01", "$1.02", "$1.03" … "$1.10"
 in a column. [V6.6b] A silver "5¢" coin icon replaces the penny icon, which fades out with a
@@ -233,7 +233,7 @@ down to 1.00; 1.03 and 1.04 up to 1.05; 1.06 and 1.07 down to 1.05; 1.08 and 1.0
 >
 > Several other countries have done something similar. If your software handles cash in any of them, rounding to the cent isn't even the right question.
 
-### 6.7 Rounding written into law · ≈ 2:00
+### 6.7 Rounding written into law · ≈ 1:32
 
 **Visual.** [V6.7a] A triangle of three currency labels: "DEM" (bottom left), "FRF" (bottom
 right), "EUR" (top). The DEM–EUR edge is labelled "1.95583 per euro"; the FRF–EUR edge
@@ -271,7 +271,7 @@ def cross_rate(dem):       # not allowed by the rules
 >
 > Why would lawmakers care about a centime? Because without one written rule, every bank would get slightly different answers, and every one of those differences would be a dispute. The point of the regulation wasn't to find the most accurate answer. It was to make sure everyone got the same one.
 
-### 6.8 Recap and challenge · ≈ 1:20
+### 6.8 Recap and challenge · ≈ 1:08
 
 **Visual.** [V6.8a] A recap column builds: "Rounding has a mode: up, down, ceiling, floor,
 half-up, half-down, half-even, 05up" → "Half-up drifts; half-even doesn't" → "Floats round
@@ -306,7 +306,7 @@ one sliver slides off into a jar labelled "?".
   half away from zero). IEEE 754's default rounding attribute is roundTiesToEven.
 - 6.3: "banker's rounding": the name is common, but its historical use by bankers is
   disputed; the script says so. Don't strengthen the claim.
-- 6.5: "about eight point one six cents" is 0.081675 dollars (8.1675 ¢); "about
+- 6.5: "about eight point one seven cents" is 0.081675 dollars (8.1675 ¢); "about
   twenty-four and a half cents" is 0.245025.
 - 6.5: "tax authorities ... often specify" — kept general on purpose. If a specific
   jurisdiction's rule is named on screen, cite it.

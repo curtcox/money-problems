@@ -9,7 +9,7 @@
 
 ## Script
 
-### 0.1 Four surprises · ≈ 0:45
+### 0.1 Four surprises · ≈ 0:38
 
 **Visual.** [V0.1a] Black canvas. A console panel types the first line of q00-01 and
 its result appears: `0.30000000000000004`. The trailing `4` pulses `RED`. [V0.1b] Hard
@@ -41,7 +41,7 @@ round(2.675, 2)     = 2.67
 >
 > None of these is a bug in Python. You would get the same answers in JavaScript, Java, C, and almost everywhere else. Scan the code in the corner and try them yourself.
 
-### 0.2 The series · ≈ 0:45
+### 0.2 The series · ≈ 0:39
 
 **Visual.** [V0.2a] The title "Money Problems" writes itself, with the subtitle "why
 floating point can't count your cents". [V0.2b] A fast montage of the series' recurring

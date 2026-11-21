@@ -20,7 +20,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 5.1 Cold open · ≈ 1:30
+### 5.1 Cold open · ≈ 1:02
 
 **Visual.** [V5.1a] A grid of eight small code panels, one per language, each labelled
 with the language's name in plain text (no logos): JavaScript, Java, C, Go, Rust, Ruby,
@@ -114,7 +114,7 @@ SELECT 0.1 + 0.2 = 0.3;
 >
 > Eight languages and a database, built by different people, in different decades, for different purposes. And they all agree on this one strange answer, down to the last digit. That's not a coincidence, and it isn't eight copies of the same bug. It's a standard.
 
-### 5.2 Same bits everywhere · ≈ 1:30
+### 5.2 Same bits everywhere · ≈ 1:06
 
 **Visual.** [V5.2a] Code panel q05-01 and console. Each hex string types out, then
 expands into 64 binary boxes in three coloured groups: 1 sign bit (`GREY`), 11 exponent
@@ -148,7 +148,7 @@ def bits(x):
 >
 > JavaScript, Java, C, Go, Rust, Ruby, Swift, SQLite: all of them store these exact bits, add them with the exact same rules, and land on the exact same neighbour. They don't just get similar answers. They get identical bits.
 
-### 5.3 Before the standard · ≈ 1:50
+### 5.3 Before the standard · ≈ 1:27
 
 **Visual.** [V5.3a] A timeline from 1950 to 1990. Before 1985, a row of distinct
 "machines" (plain labelled boxes, no logos): "IBM System/360: base 16", "DEC VAX: its own
@@ -170,7 +170,7 @@ all morph into the same 1-11-52 layout. A large stamp: "binary64".
 >
 > That's why the answers agree. The languages aren't doing arithmetic. The chip is.
 
-### 5.4 What float really is · ≈ 1:20
+### 5.4 What float really is · ≈ 0:45
 
 **Visual.** [V5.4a] Code panel q05-04 and console. Each line of output connects with a
 `YELLOW` line to the matching part of the 64-box diagram: `mant_dig 53` to the 52 fraction
@@ -203,7 +203,7 @@ radix (base):                2
 >
 > Python didn't choose any of these numbers. They come from IEEE 754, and Python simply reports them. Ask the same question in C or in Rust, and you'll get the same fifty-three, the same fifteen, the same two.
 
-### 5.5 One value, four costumes · ≈ 1:40
+### 5.5 One value, four costumes · ≈ 1:06
 
 **Visual.** [V5.5a] A single gold dot on the float line: the double `0x3fd3333333333334`.
 Four "costume" cards drop over it in turn, each labelled with who wears it: "shortest
@@ -241,7 +241,7 @@ is it 0.3?                                False
 >
 > Four costumes, one value underneath. And whichever costume it's wearing, the comparison at the bottom still says false. Displays can hide the error. They can't remove it. That's worth remembering every time a spreadsheet or a report looks perfect: what you see may be a costume.
 
-### 5.6 JavaScript's integer ceiling · ≈ 1:20
+### 5.6 JavaScript's integer ceiling · ≈ 1:11
 
 **Visual.** [V5.6a] The float line again, now far to the right, around 2⁵³. Below 2⁵³,
 ticks fall on every whole number. At 2⁵³ the spacing doubles: ticks only on even numbers.
@@ -284,7 +284,7 @@ console.log(Number.MAX_SAFE_INTEGER);
 >
 > Python's own integers have no such limit, so this code uses float to show what a double would do. If you store an amount in cents, you're safe up to about ninety trillion dollars. Most of us are. But database IDs, account numbers and amounts in very small units can cross that line, and JavaScript will round them without a word. In 2020, the language added a second number type, BigInt, for exactly this reason.
 
-### 5.7 Databases and spreadsheets · ≈ 1:40
+### 5.7 Databases and spreadsheets · ≈ 1:35
 
 **Visual.** [V5.7a] A database table icon with two columns: one labelled `FLOAT / REAL /
 DOUBLE PRECISION` in `RED` ("approximate"), one labelled `DECIMAL / NUMERIC` in `GREEN`
@@ -317,7 +317,7 @@ real
 >
 > The stored value was fine: the double just below sixty-five thousand five hundred and thirty-five, because seventy-seven point one can't be stored exactly. The bug was in the code that turned that double into text for the screen. Microsoft fixed it within weeks. But it's a perfect miniature of this whole series: the real value was slightly off, the display tried to hide that, and the hiding went wrong.
 
-### 5.8 The exceptions · ≈ 1:40
+### 5.8 The exceptions · ≈ 1:28
 
 **Visual.** [V5.8a] A wall of language names in `GREY`, all labelled "binary64 by default".
 Some of them light up `GREEN` with a second label naming their decimal type: "C#:
@@ -346,7 +346,7 @@ System.out.println(new BigDecimal("0.1").add(new BigDecimal("0.2")));
 >
 > The standard caught up, too. The 2008 revision of IEEE 754 added decimal floating-point formats, IBM builds them into the hardware of some of its server processors, and the latest C standard has decimal floating types. JavaScript still has no built-in decimal type, although a proposal to add one is under discussion.
 
-### 5.9 Why binary is the default · ≈ 1:10
+### 5.9 Why binary is the default · ≈ 0:48
 
 **Visual.** [V5.9a] Two figures side by side: a "scientist" icon measuring with a ruler and
 a stopwatch, and an "accountant" icon counting coins. Above the scientist, "binary64:
@@ -362,7 +362,7 @@ fades in, then fades halfway out, held back for episode 10.
 >
 > Money is different. Money isn't measured. It's counted. Nobody has nine point nine nine nine nine dimes. And counting needs exactness, in the base we count in. The languages didn't make a mistake. They picked the scientist's number. Our job is to notice when we're doing the accountant's work.
 
-### 5.10 Recap and challenge · ≈ 1:20
+### 5.10 Recap and challenge · ≈ 1:07
 
 **Visual.** [V5.10a] A recap column builds: "Same bits in every language" → "IEEE 754
 since 1985, in the hardware" → "Printing is a costume" → "JavaScript: exact integers only

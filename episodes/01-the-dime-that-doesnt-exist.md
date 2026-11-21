@@ -19,7 +19,7 @@ By the end, the viewer can:
 
 ## Script
 
-### 1.1 Cold open · ≈ 1:00
+### 1.1 Cold open · ≈ 0:52
 
 **Visual.** [V1.1a] Black canvas. A gold dime icon labelled "10¢" and a gold coin
 labelled "20¢" slide together; a plus sign appears between them. [V1.1b] The coins
@@ -55,7 +55,7 @@ a + b == 0.30: False
 >
 > Here's the surprising part. The trouble didn't happen when we added. It happened earlier, on the very first line, when we wrote ten cents. <break time="0.6s" /> Because your computer cannot store ten cents. Not approximately-badly. Not with a bug. It's simply impossible, in the kind of number Python uses by default. The dime doesn't exist.
 
-### 1.2 A number you can't write down · ≈ 1:30
+### 1.2 A number you can't write down · ≈ 1:09
 
 **Visual.** [V1.2a] "1/3" appears in `YELLOW`. An arrow leads to "0.3", then "0.33", then
 "0.333", each new digit appearing with a soft click, trailing into "0.3333333…".
@@ -79,7 +79,7 @@ denominators are built from 2s and 5s, because 10 = 2 × 5."
 >
 > Hold on to that rule. We're about to apply it to a different base.
 
-### 1.3 Counting in halves · ≈ 1:20
+### 1.3 Counting in halves · ≈ 0:56
 
 **Visual.** [V1.3a] A row of decimal place-value boxes (ones, tenths, hundredths)
 morphs into binary place-value boxes: "1", "½", "¼", "⅛", "1/16", "1/32". [V1.3b] A bar
@@ -99,7 +99,7 @@ column. A gold "1/10" label drops into the `RED` column with a thud.
 >
 > One fifth? That has a five in the denominator. In binary, it repeats forever. One twentieth? Repeats forever. And one tenth, ten cents, a dime, which is one over two times five? <break time="0.6s" /> It has a five in it. In binary, one tenth is our one third. It never ends.
 
-### 1.4 Long division by doubling · ≈ 1:50
+### 1.4 Long division by doubling · ≈ 1:07
 
 **Visual.** [V1.4a] Code panel with q01-02's `binary_digits` function. [V1.4b] A table
 with columns "value", "× 2", "bit", "keep". Row by row, starting at 1/10: 1/10 doubles to
@@ -143,13 +143,13 @@ def binary_digits(x, count):
 >
 > That's the code in the corner. It does exactly this doubling, using Python's Fraction type so the arithmetic is exact. A quarter and three eighths finish after a few digits, then nothing but zeros. One tenth and one fifth never finish.
 
-### 1.5 Where the computer stops · ≈ 1:40
+### 1.5 Where the computer stops · ≈ 1:09
 
 **Visual.** [V1.5a] The endless string `0.0001100110011…` scrolls right. A ruler
 labelled "53 significant bits" slides along it, starting at the first `1`. Everything
-past the ruler's end greys out and falls away. [V1.5b] At the cut, the last kept bit
-flips from 0 to 1 (rounded up, because the discarded tail is more than half). A `BLUE`
-label: "rounded up". [V1.5c] Code panel q01-03; the console prints `Decimal(0.1)` with its
+past the ruler's end greys out and falls away. [V1.5b] At the cut, the kept bits end
+`…1001` and the discarded tail is more than half, so they round up: a carry turns them
+into `…1010`. A `BLUE` label: "rounded up". [V1.5c] Code panel q01-03; the console prints `Decimal(0.1)` with its
 55 digits after the point. The first `1` is `YELLOW`; the long tail after
 `0.10000000000000000` is `RED`. [V1.5d] The Fraction line appears; the denominator morphs
 into `2^55`. [V1.5e] The error line: a tiny magnifier hovers over "5.551115123125783e-18",
@@ -183,7 +183,7 @@ stored - 1/10 = 1/180143985094819840
 >
 > The stored value is too big by about five and a half quintillionths of a dollar. That's absurdly small. You will never see it on a bank statement. But it's not zero, and computers are very good at doing things a billion times.
 
-### 1.6 The cent grid · ≈ 1:50
+### 1.6 The cent grid · ≈ 1:14
 
 **Visual.** [V1.6a] A 10 × 10 grid of cells labelled $0.00 to $0.99 builds row by row
 (the cent grid motif). All cells start `GREY`. [V1.6b] Code panel q01-04 on the left. As
@@ -226,7 +226,7 @@ exact: [0, 25, 50, 75]
 >
 > And the errors don't all lean the same way. Ten cents and twenty cents are stored slightly too high. Thirty cents and seventy cents are stored slightly too low. Each one is simply whichever neighbour happened to be nearest. Remember that, because it means errors can pile up, or partly cancel, depending on which amounts you happen to be adding.
 
-### 1.7 Why 0.1 + 0.2 misses · ≈ 1:40
+### 1.7 Why 0.1 + 0.2 misses · ≈ 1:12
 
 **Visual.** [V1.7a] The float line motif: a horizontal line, heavily zoomed, with three
 tick marks near 0.3, evenly spaced. The middle region is labelled "0.3" with a `YELLOW`
@@ -253,7 +253,7 @@ join exactly at 0.75, which sits on a tick.
 >
 > And a quarter plus a half? Both are stored exactly, so there's no error to add up. The sum lands right on a tick, the tick for seventy-five cents.
 
-### 1.8 Why you rarely see it · ≈ 1:20
+### 1.8 Why you rarely see it · ≈ 1:07
 
 **Visual.** [V1.8a] The console prints `0.1` for `print(0.1)` (on screen as a bare line, not
 from a snippet). Beside it, the long `Decimal(0.1)` value from q01-03 slides in for
@@ -270,7 +270,7 @@ small "catchment" region around it; "0.1" is the shortest decimal inside that re
 >
 > One more thing worth mentioning, while we're talking about things that aren't quite what they seem. The voice you're listening to is synthetic: text-to-speech built from a model of Curt Cox's voice. It reads names from code as ordinary English words, so some of them may sound different from the way programmers say them.
 
-### 1.9 Recap and challenge · ≈ 1:20
+### 1.9 Recap and challenge · ≈ 1:05
 
 **Visual.** [V1.9a] A recap column builds: "Decimal finishes fractions built from 2s and 5s"
 → "Binary finishes only powers of 2" → "1/10 repeats forever in binary" → "A double keeps 53
